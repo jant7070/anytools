@@ -1,0 +1,54 @@
+{
+  "home": {
+    "seoTitle": "Tools",
+    "seoDescription": "A collection of fast, privacy-friendly tools built with React + Vite.",
+    "title": "A toolbox that scales",
+    "subtitle": "Each tool lives in its own module: page, UI, logic, metadata, and tests when you need them.",
+    "featuredTools": "Featured tools",
+    "viewAll": "View all"
+  },
+  "tools": {
+    "seoTitle": "All tools | Tools",
+    "seoDescription": "Browse all tools.",
+    "title": "All tools",
+    "subtitle": "Tools are grouped by category and shipped as isolated feature modules."
+  },
+  "category": {
+    "notFoundTitle": "Category not found",
+    "notFoundSubtitle": "That category doesn’t exist.",
+    "empty": "No tools in this category yet."
+  },
+  "notFound": {
+    "seoTitle": "Not found | Tools",
+    "seoDescription": "This page could not be found.",
+    "title": "Page not found",
+    "subtitlePrefix": "No match for"
+  },
+  "categories": {
+    "image-tools": {
+      "name": "Image Tools",
+      "description": "Resize, compress, convert, crop, and pixelate images."
+    },
+    "pdf-tools": {
+      "name": "PDF Tools",
+      "description": "Convert, merge, split, compress, and manage PDF files."
+    },
+    "text-tools": {
+      "name": "Text Tools",
+      "description": "Count, format, clean, and transform text."
+    },
+    "calculators": {
+      "name": "Calculators",
+      "description": "Simple calculators for everyday calculations."
+    },
+    "developer-tools": {
+      "name": "Developer Tools",
+      "description": "Format, validate, encode, decode, and generate developer data."
+    },
+    "generators": {
+      "name": "Generators",
+      "description": "Generate QR codes, passwords, UUIDs, and more."
+    }
+  }
+}
+

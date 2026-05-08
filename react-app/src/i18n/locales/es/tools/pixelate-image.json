@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "name": "Pixelar imagen",
+    "description": "Pixela una imagen en tu navegador y controla el tamaño del píxel.",
+    "keywords": ["pixelar imagen", "pixelador", "arte pixel", "mosaico"]
+  },
+  "page": {
+    "howToTitle": "Cómo pixelar una imagen",
+    "howToBody": "Sube una imagen, ajusta el tamaño del píxel, previsualiza el resultado y descárgalo."
+  },
+  "tool": {
+    "uploadLabel": "Subir imagen",
+    "pixelSizeLabel": "Tamaño del píxel",
+    "download": "Descargar PNG",
+    "uploadAria": "Sube una imagen para pixelar",
+    "pixelSizeAria": "Tamaño del píxel",
+    "downloadAria": "Descargar imagen pixelada",
+    "emptyPreview": "Sube una imagen para ver la vista previa."
+  }
+}
+

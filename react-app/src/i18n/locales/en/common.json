@@ -1,0 +1,15 @@
+{
+  "siteName": "Tools",
+  "nav": {
+    "allTools": "All tools",
+    "image": "Image"
+  },
+  "actions": {
+    "backHome": "Back home"
+  },
+  "lang": {
+    "en": "English",
+    "es": "Spanish"
+  }
+}
+

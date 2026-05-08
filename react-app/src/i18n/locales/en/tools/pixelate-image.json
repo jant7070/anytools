@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "name": "Pixelate Image",
+    "description": "Pixelate an image in your browser and control the pixel size.",
+    "keywords": ["pixelate image", "image pixelator", "pixel art", "mosaic"]
+  },
+  "page": {
+    "howToTitle": "How to pixelate an image",
+    "howToBody": "Upload an image, adjust the pixel size, preview the result, then download."
+  },
+  "tool": {
+    "uploadLabel": "Upload image",
+    "pixelSizeLabel": "Pixel size",
+    "download": "Download PNG",
+    "uploadAria": "Upload an image to pixelate",
+    "pixelSizeAria": "Pixel size",
+    "downloadAria": "Download pixelated image",
+    "emptyPreview": "Upload an image to see a preview."
+  }
+}
+

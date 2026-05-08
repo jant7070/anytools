@@ -1,0 +1,54 @@
+{
+  "home": {
+    "seoTitle": "Herramientas",
+    "seoDescription": "Una colección de herramientas rápidas y respetuosas con la privacidad, hechas con React + Vite.",
+    "title": "Una caja de herramientas que escala",
+    "subtitle": "Cada herramienta vive en su propio módulo: página, UI, lógica, metadatos y tests cuando los necesites.",
+    "featuredTools": "Herramientas destacadas",
+    "viewAll": "Ver todas"
+  },
+  "tools": {
+    "seoTitle": "Todas las herramientas | Herramientas",
+    "seoDescription": "Explora todas las herramientas.",
+    "title": "Todas las herramientas",
+    "subtitle": "Las herramientas se agrupan por categoría y se entregan como módulos aislados."
+  },
+  "category": {
+    "notFoundTitle": "Categoría no encontrada",
+    "notFoundSubtitle": "Esa categoría no existe.",
+    "empty": "Aún no hay herramientas en esta categoría."
+  },
+  "notFound": {
+    "seoTitle": "No encontrado | Herramientas",
+    "seoDescription": "Esta página no existe.",
+    "title": "Página no encontrada",
+    "subtitlePrefix": "No hay coincidencia para"
+  },
+  "categories": {
+    "image-tools": {
+      "name": "Herramientas de imagen",
+      "description": "Redimensiona, comprime, convierte, recorta y pixela imágenes."
+    },
+    "pdf-tools": {
+      "name": "Herramientas PDF",
+      "description": "Convierte, une, divide, comprime y gestiona archivos PDF."
+    },
+    "text-tools": {
+      "name": "Herramientas de texto",
+      "description": "Cuenta, formatea, limpia y transforma texto."
+    },
+    "calculators": {
+      "name": "Calculadoras",
+      "description": "Calculadoras simples para el día a día."
+    },
+    "developer-tools": {
+      "name": "Herramientas para desarrolladores",
+      "description": "Formatea, valida, codifica, decodifica y genera datos."
+    },
+    "generators": {
+      "name": "Generadores",
+      "description": "Genera códigos QR, contraseñas, UUIDs y más."
+    }
+  }
+}
+

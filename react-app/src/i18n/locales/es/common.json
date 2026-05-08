@@ -1,0 +1,15 @@
+{
+  "siteName": "Herramientas",
+  "nav": {
+    "allTools": "Todas",
+    "image": "Imagen"
+  },
+  "actions": {
+    "backHome": "Volver al inicio"
+  },
+  "lang": {
+    "en": "Inglés",
+    "es": "Español"
+  }
+}
+
