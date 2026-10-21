@@ -124,6 +124,10 @@ Keep the markers.
 
 ## Deployment notes
 
+- Coolify: `docker-compose.coolify.yml` (GHCR images, inline Caddyfile, `migrate` one-shot running
+  migrations + seed each deploy, Coolify magic `SERVICE_PASSWORD_*` secrets). Guide: `docs/deploy-coolify.md`.
+  Blank env values are treated as unset (`withoutEmptyEnv`), so `${VAR:-}` placeholders are safe.
+
 - CI (`.github/workflows/ci.yml`): PRs run lint, typecheck, test, build; pushes to `main` also
   publish `ghcr.io/<owner>/anytools-{web,api,worker}` (`latest` + commit sha).
 - Run migrations before starting new API containers:

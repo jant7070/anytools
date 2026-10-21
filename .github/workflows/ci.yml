@@ -90,3 +90,22 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=${{ matrix.app }}
           cache-to: type=gha,mode=max,scope=${{ matrix.app }}
+
+  deploy:
+    name: Trigger Coolify deploy
+    needs: images
+    runs-on: ubuntu-latest
+    steps:
+      # Optional: set COOLIFY_WEBHOOK_URL and COOLIFY_TOKEN in the repo secrets to redeploy
+      # automatically after the images are published (see docs/deploy-coolify.md).
+      - name: Call the Coolify deploy webhook
+        env:
+          COOLIFY_WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          if [ -z "$COOLIFY_WEBHOOK_URL" ] || [ -z "$COOLIFY_TOKEN" ]; then
+            echo "Coolify secrets not set; skipping automatic deploy."
+            exit 0
+          fi
+          curl --fail --silent --show-error --max-time 60 \
+            -H "Authorization: Bearer $COOLIFY_TOKEN" "$COOLIFY_WEBHOOK_URL"

@@ -1,3 +1,4 @@
+import { withoutEmptyEnv } from "@anytools/shared";
 import { refineStorageEnv, storageEnvShape } from "@anytools/tools/storage";
 import { z } from "zod";
 
@@ -24,7 +25,7 @@ export type Env = z.output<typeof envSchema>;
 export class EnvError extends Error {}
 
 export function loadEnv(source: NodeJS.ProcessEnv = process.env): Env {
-  const result = envSchema.safeParse(source);
+  const result = envSchema.safeParse(withoutEmptyEnv(source));
   if (!result.success) {
     const lines = result.error.issues.map(
       (i) => `  - ${i.path.join(".") || "(root)"}: ${i.message}`,

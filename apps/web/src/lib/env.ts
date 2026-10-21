@@ -1,3 +1,4 @@
+import { withoutEmptyEnv } from "@anytools/shared";
 import { z } from "zod";
 
 const optional = z.string().trim().min(1).optional().catch(undefined);
@@ -19,7 +20,7 @@ let cached: WebEnv | undefined;
 /** Server-only: validated runtime environment (read at request time, not inlined at build). */
 export function getEnv(): WebEnv {
   if (cached) return cached;
-  const result = envSchema.safeParse(process.env);
+  const result = envSchema.safeParse(withoutEmptyEnv(process.env));
   if (!result.success) {
     const lines = result.error.issues.map((i) => `  - ${i.path.join(".")}: ${i.message}`);
     throw new Error(

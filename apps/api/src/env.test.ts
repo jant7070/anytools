@@ -61,4 +61,11 @@ describe("loadEnv", () => {
       "172.16.0.1",
     ]);
   });
+
+  it("treats blank variables as unset (compose `${VAR:-}` placeholders)", () => {
+    const env = loadEnv({ ...base, PORT: "", MONETAG_ZONE_ID: "", S3_ENDPOINT: "  " });
+    expect(env.PORT).toBe(4000);
+    expect(env.MONETAG_ZONE_ID).toBeUndefined();
+    expect(env.S3_ENDPOINT).toBeUndefined();
+  });
 });

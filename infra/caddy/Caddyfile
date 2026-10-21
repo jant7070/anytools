@@ -1,5 +1,13 @@
 # Local stand-in for production routing (Traefik in Coolify): one origin, `/api/*` → API,
 # everything else → web. Access logs are disabled (Caddy's default), so query strings are never logged.
+{
+	servers {
+		# Keep X-Forwarded-For from an upstream proxy on the private network (Coolify's Traefik)
+		# instead of replacing it with that proxy's address.
+		trusted_proxies static private_ranges
+	}
+}
+
 :80 {
 	encode zstd gzip
 

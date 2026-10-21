@@ -106,8 +106,4 @@ GitHub Actions (`.github/workflows/ci.yml`):
 - En cada PR: lint, typecheck, tests (con Postgres y Redis como servicios) y build.
 - En cada push a `main`, además: construye y publica `ghcr.io/<owner>/anytools-web`, `-api` y `-worker` (etiquetas `latest` y el SHA del commit).
 
-El despliegue en Coolify se configura aparte. Antes de arrancar una versión nueva de la API, ejecuta las migraciones desde la imagen de la API:
-
-```bash
-node node_modules/@anytools/db/dist/migrate.js
-```
+Para desplegar en Coolify, sigue la guía [docs/deploy-coolify.md](docs/deploy-coolify.md). Usa `docker-compose.coolify.yml`, que ya ejecuta las migraciones y el seed en cada despliegue (servicio `migrate`).
