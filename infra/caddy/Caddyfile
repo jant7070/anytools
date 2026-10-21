@@ -1,0 +1,13 @@
+# Local stand-in for production routing (Traefik in Coolify): one origin, `/api/*` → API,
+# everything else → web. Access logs are disabled (Caddy's default), so query strings are never logged.
+:80 {
+	encode zstd gzip
+
+	handle /api/* {
+		reverse_proxy api:4000
+	}
+
+	handle {
+		reverse_proxy web:3000
+	}
+}

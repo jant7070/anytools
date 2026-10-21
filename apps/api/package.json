@@ -1,0 +1,43 @@
+{
+  "name": "@anytools/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsx watch --conditions=@anytools/source --env-file-if-exists=.env src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anytools/db": "workspace:*",
+    "@anytools/shared": "workspace:*",
+    "@anytools/tools": "workspace:*",
+    "@fastify/cookie": "^11.1.3",
+    "@fastify/multipart": "^10.1.4",
+    "@fastify/rate-limit": "^11.2.1",
+    "bullmq": "catalog:",
+    "drizzle-orm": "catalog:",
+    "fastify": "^5.12.7",
+    "fastify-type-provider-zod": "^7.0.0",
+    "ioredis": "catalog:",
+    "jose": "^6.2.13",
+    "pino": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@anytools/config": "workspace:*",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "pino-pretty": "^13.2.0",
+    "sharp": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

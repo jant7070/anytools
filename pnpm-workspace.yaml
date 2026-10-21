@@ -1,0 +1,61 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Single source of truth for versions shared across workspaces.
+catalog:
+  "@types/node": ^24.10.0
+  "@vitest/coverage-v8": ^5.0.5
+  drizzle-orm: ^0.45.4
+  eslint: ^9.39.5
+  ioredis: ^6.0.0
+  bullmq: ^6.3.18
+  pino: ^10.4.0
+  prettier: ^3.9.10
+  sharp: ^0.35.5
+  tsx: ^4.23.15
+  # TypeScript 7 (native) does not expose the JS API yet; typescript-eslint and Next.js need 6.0.x.
+  typescript: ~6.0.3
+  vitest: ^5.0.5
+  zod: ^4.6.7
+
+# Dependencies allowed to run install scripts (pnpm blocks all others).
+allowBuilds:
+  "@parcel/watcher": true
+  "@swc/core": true
+  core-js: false
+  esbuild: true
+  msgpackr-extract: true
+  sharp: true
+  unrs-resolver: true
+
+# Added by pnpm: versions newer than the default minimum release age.
+minimumReleaseAgeExclude:
+  - "@typescript-eslint/eslint-plugin@8.72.0"
+  - "@typescript-eslint/parser@8.72.0"
+  - "@typescript-eslint/project-service@8.72.0"
+  - "@typescript-eslint/scope-manager@8.72.0"
+  - "@typescript-eslint/tsconfig-utils@8.72.0"
+  - "@typescript-eslint/type-utils@8.72.0"
+  - "@typescript-eslint/types@8.72.0"
+  - "@typescript-eslint/typescript-estree@8.72.0"
+  - "@typescript-eslint/utils@8.72.0"
+  - "@typescript-eslint/visitor-keys@8.72.0"
+  - typescript-eslint@8.72.0
+  - "@aws-sdk/checksums@3.1001.4"
+  - "@aws-sdk/client-s3@3.1153.0"
+  - "@aws-sdk/core@3.978.4"
+  - "@aws-sdk/credential-provider-env@3.972.75"
+  - "@aws-sdk/credential-provider-http@3.972.77"
+  - "@aws-sdk/credential-provider-ini@3.973.20"
+  - "@aws-sdk/credential-provider-login@3.972.82"
+  - "@aws-sdk/credential-provider-node@3.972.87"
+  - "@aws-sdk/credential-provider-process@3.972.75"
+  - "@aws-sdk/credential-provider-sso@3.973.19"
+  - "@aws-sdk/credential-provider-web-identity@3.972.81"
+  - "@aws-sdk/middleware-sdk-s3@3.972.80"
+  - "@aws-sdk/nested-clients@3.997.49"
+  - "@aws-sdk/s3-request-presigner@3.1153.0"
+  - "@aws-sdk/token-providers@3.1153.0"
+  - bullmq@6.3.18
+  - jose@6.2.13

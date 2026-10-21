@@ -1,0 +1,117 @@
+{
+  "site": {
+    "name": "Any Tools",
+    "tagline": "Herramientas web gratis, rápidas y sin registro",
+    "description": "Pixela fotos, genera contraseñas, comprime imágenes y mucho más. Herramientas online gratuitas, rápidas y sin crear cuenta."
+  },
+  "nav": {
+    "home": "Inicio",
+    "skipToContent": "Saltar al contenido",
+    "language": "Idioma",
+    "switchTo": "English"
+  },
+  "footer": {
+    "adsNote": "Las herramientas son gratuitas gracias a anuncios breves: cada anuncio desbloquea una herramienta durante 5 minutos.",
+    "privacy": "No guardamos tus archivos: los resultados se borran automáticamente a los 30 minutos.",
+    "copyright": "© {year} Any Tools"
+  },
+  "home": {
+    "title": "Herramientas online para el día a día",
+    "subtitle": "Elige una herramienta, mira un anuncio breve y úsala gratis durante 5 minutos.",
+    "searchLabel": "Buscar herramientas",
+    "searchPlaceholder": "Buscar: contraseña, PDF, imagen…",
+    "searchResults": "{count, plural, =0 {Sin resultados} one {# resultado} other {# resultados}}",
+    "searchNoResults": "No encontramos herramientas para «{query}».",
+    "featured": "Destacadas",
+    "popular": "Más usadas",
+    "popularHint": "Últimos 7 días",
+    "byCategory": "Por categoría",
+    "byAudience": "Por perfil",
+    "audienceLabel": "Elige un perfil",
+    "newest": "Nuevas",
+    "empty": "Todavía no hay herramientas publicadas."
+  },
+  "tool": {
+    "draft": "Borrador",
+    "comingSoon": "Estamos terminando esta herramienta. ¡Vuelve pronto!",
+    "about": "Acerca de esta herramienta",
+    "forAudiences": "Ideal para",
+    "locked": "Bloqueada",
+    "unlocked": "Desbloqueada",
+    "timeLeft": "Quedan {time}",
+    "unlockCta": "Ver anuncio y desbloquear",
+    "unlockHint": "Un anuncio breve desbloquea esta herramienta durante 5 minutos.",
+    "expired": "El desbloqueo terminó. Mira otro anuncio para seguir usando la herramienta.",
+    "processing": "Procesando…",
+    "queued": "En cola…",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "download": "Descargar",
+    "expiresNote": "El archivo se borra automáticamente en 30 minutos.",
+    "rateLimited": "Demasiadas solicitudes. Espera un momento e inténtalo de nuevo.",
+    "run": "Ejecutar",
+    "input": "Entrada",
+    "result": "Resultado",
+    "file": "Archivo"
+  },
+  "unlock": {
+    "title": "Desbloquear «{tool}»",
+    "intro": "Mira un anuncio breve para usar esta herramienta gratis durante 5 minutos.",
+    "verifyingHuman": "Comprobando que eres humano…",
+    "starting": "Preparando el anuncio…",
+    "adLabel": "Anuncio",
+    "devAdTitle": "Anuncio de prueba",
+    "devAdBody": "Este es un anuncio falso que solo aparece en desarrollo.",
+    "secondsLeft": "{seconds, plural, one {Queda # segundo} other {Quedan # segundos}}",
+    "adPlaying": "El anuncio se está mostrando…",
+    "verifying": "Verificando el anuncio…",
+    "waitServer": "Verificando el anuncio… {seconds} s",
+    "success": "¡Listo! Herramienta desbloqueada durante 5 minutos.",
+    "noAd": "No hay anuncios disponibles en este momento.",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "failed": "No se pudo completar el desbloqueo.",
+    "turnstileFailed": "No pudimos comprobar que eres humano.",
+    "expiredSession": "La sesión del anuncio caducó. Inténtalo de nuevo."
+  },
+  "passwordGenerator": {
+    "length": "Longitud",
+    "lowercase": "Minúsculas (a-z)",
+    "uppercase": "Mayúsculas (A-Z)",
+    "digits": "Números (0-9)",
+    "symbols": "Símbolos (!@#…)",
+    "excludeAmbiguous": "Excluir caracteres ambiguos (I l 1 O 0 o)",
+    "count": "Cantidad",
+    "generate": "Generar contraseñas",
+    "atLeastOne": "Selecciona al menos un tipo de carácter.",
+    "result": "Contraseñas generadas",
+    "copy": "Copiar",
+    "copied": "¡Copiada!",
+    "entropy": "Entropía: {bits} bits",
+    "strength": {
+      "weak": "Débil",
+      "fair": "Aceptable",
+      "strong": "Fuerte",
+      "veryStrong": "Muy fuerte"
+    }
+  },
+  "pixelateImage": {
+    "file": "Imagen",
+    "fileHint": "JPG, PNG o WebP · máx. 10 MB",
+    "chooseFile": "Elegir imagen",
+    "mode": "Modo",
+    "pixelate": "Pixelar",
+    "blur": "Difuminar",
+    "intensity": "Intensidad",
+    "process": "Procesar imagen",
+    "original": "Original",
+    "result": "Resultado",
+    "tooLarge": "La imagen supera los 10 MB.",
+    "invalidType": "Formato no admitido. Usa JPG, PNG o WebP.",
+    "noFile": "Elige una imagen primero."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "La página que buscas no existe o se ha movido.",
+    "back": "Volver al inicio"
+  }
+}

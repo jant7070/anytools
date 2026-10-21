@@ -1,0 +1,117 @@
+{
+  "site": {
+    "name": "Any Tools",
+    "tagline": "Free, fast web tools — no sign-up",
+    "description": "Pixelate photos, generate passwords, compress images and much more. Free, fast online tools with no account required."
+  },
+  "nav": {
+    "home": "Home",
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "switchTo": "Español"
+  },
+  "footer": {
+    "adsNote": "Tools are free thanks to short ads: each ad unlocks one tool for 5 minutes.",
+    "privacy": "We don't keep your files: results are deleted automatically after 30 minutes.",
+    "copyright": "© {year} Any Tools"
+  },
+  "home": {
+    "title": "Online tools for everyday tasks",
+    "subtitle": "Pick a tool, watch a short ad and use it for free for 5 minutes.",
+    "searchLabel": "Search tools",
+    "searchPlaceholder": "Search: password, PDF, image…",
+    "searchResults": "{count, plural, =0 {No results} one {# result} other {# results}}",
+    "searchNoResults": "No tools found for “{query}”.",
+    "featured": "Featured",
+    "popular": "Most used",
+    "popularHint": "Last 7 days",
+    "byCategory": "By category",
+    "byAudience": "By profile",
+    "audienceLabel": "Choose a profile",
+    "newest": "New",
+    "empty": "No tools have been published yet."
+  },
+  "tool": {
+    "draft": "Draft",
+    "comingSoon": "We're putting the finishing touches on this tool. Check back soon!",
+    "about": "About this tool",
+    "forAudiences": "Great for",
+    "locked": "Locked",
+    "unlocked": "Unlocked",
+    "timeLeft": "{time} left",
+    "unlockCta": "Watch an ad to unlock",
+    "unlockHint": "A short ad unlocks this tool for 5 minutes.",
+    "expired": "Your unlock has ended. Watch another ad to keep using this tool.",
+    "processing": "Processing…",
+    "queued": "Queued…",
+    "error": "Something went wrong. Please try again.",
+    "download": "Download",
+    "expiresNote": "The file is deleted automatically in 30 minutes.",
+    "rateLimited": "Too many requests. Wait a moment and try again.",
+    "run": "Run",
+    "input": "Input",
+    "result": "Result",
+    "file": "File"
+  },
+  "unlock": {
+    "title": "Unlock “{tool}”",
+    "intro": "Watch a short ad to use this tool for free for 5 minutes.",
+    "verifyingHuman": "Checking that you're human…",
+    "starting": "Preparing the ad…",
+    "adLabel": "Advertisement",
+    "devAdTitle": "Test ad",
+    "devAdBody": "This is a fake ad that only appears in development.",
+    "secondsLeft": "{seconds, plural, one {# second left} other {# seconds left}}",
+    "adPlaying": "The ad is playing…",
+    "verifying": "Verifying the ad…",
+    "waitServer": "Verifying the ad… {seconds}s",
+    "success": "Done! Tool unlocked for 5 minutes.",
+    "noAd": "No ads are available right now.",
+    "retry": "Try again",
+    "close": "Close",
+    "failed": "The unlock could not be completed.",
+    "turnstileFailed": "We couldn't verify that you're human.",
+    "expiredSession": "The ad session expired. Please try again."
+  },
+  "passwordGenerator": {
+    "length": "Length",
+    "lowercase": "Lowercase (a-z)",
+    "uppercase": "Uppercase (A-Z)",
+    "digits": "Numbers (0-9)",
+    "symbols": "Symbols (!@#…)",
+    "excludeAmbiguous": "Exclude ambiguous characters (I l 1 O 0 o)",
+    "count": "How many",
+    "generate": "Generate passwords",
+    "atLeastOne": "Select at least one character type.",
+    "result": "Generated passwords",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "entropy": "Entropy: {bits} bits",
+    "strength": {
+      "weak": "Weak",
+      "fair": "Fair",
+      "strong": "Strong",
+      "veryStrong": "Very strong"
+    }
+  },
+  "pixelateImage": {
+    "file": "Image",
+    "fileHint": "JPG, PNG or WebP · max 10 MB",
+    "chooseFile": "Choose image",
+    "mode": "Mode",
+    "pixelate": "Pixelate",
+    "blur": "Blur",
+    "intensity": "Intensity",
+    "process": "Process image",
+    "original": "Original",
+    "result": "Result",
+    "tooLarge": "The image is larger than 10 MB.",
+    "invalidType": "Unsupported format. Use JPG, PNG or WebP.",
+    "noFile": "Choose an image first."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
+  }
+}

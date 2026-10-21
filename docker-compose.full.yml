@@ -1,0 +1,127 @@
+# Production-like local stack: every service runs from its production Dockerfile behind a
+# reverse proxy that mimics the single-domain routing of production.
+#
+#   docker compose -f docker-compose.full.yml up --build
+#   open http://localhost:8080
+#
+# Uses its own project name and volumes, so it can run next to docker-compose.yml.
+# Secrets below are local-only placeholders. Never reuse them in production.
+name: anytools-full
+
+x-api-env: &api-env
+  NODE_ENV: production
+  DATABASE_URL: postgres://anytools:anytools@postgres:5432/anytools
+  REDIS_URL: redis://redis:6379
+  STORAGE_DRIVER: local
+  STORAGE_LOCAL_DIR: /data/storage
+  FILE_SIGNING_SECRET: full-stack-local-file-signing-secret-000000
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: anytools
+      POSTGRES_PASSWORD: anytools
+      POSTGRES_DB: anytools
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U anytools -d anytools"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory-policy", "noeviction"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # One-shot: apply migrations and seed the catalog (the equivalent of Coolify's pre-deploy step).
+  migrate:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+    image: anytools-api:local
+    command:
+      [
+        "sh",
+        "-c",
+        "node node_modules/@anytools/db/dist/migrate.js && node node_modules/@anytools/db/dist/seed.js",
+      ]
+    environment:
+      DATABASE_URL: postgres://anytools:anytools@postgres:5432/anytools
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: "no"
+
+  api:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+    image: anytools-api:local
+    restart: unless-stopped
+    environment:
+      <<: *api-env
+      PORT: "4000"
+      COOKIE_SECRET: full-stack-local-cookie-secret-0000000000000
+      UNLOCK_JWT_SECRET: full-stack-local-unlock-jwt-secret-00000000
+      IP_HASH_SALT: full-stack-local-ip-salt
+      # Plain http://localhost: Secure cookies are skipped by some browsers (Safari).
+      COOKIE_SECURE: "false"
+      TRUST_PROXY: "1" # one hop: Caddy
+      # Local testing only: the fake ad provider and draft tools, exactly like `pnpm dev`.
+      AD_PROVIDER: dev
+      ALLOW_DEV_AD_PROVIDER: "true"
+      SHOW_DRAFT_TOOLS: "true"
+      TURNSTILE_SECRET_KEY: 1x0000000000000000000000000000000AA
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+
+  worker:
+    build: { context: ., dockerfile: apps/worker/Dockerfile }
+    image: anytools-worker:local
+    restart: unless-stopped
+    environment:
+      <<: *api-env
+      WORKER_CONCURRENCY: "2"
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+
+  web:
+    build: { context: ., dockerfile: apps/web/Dockerfile }
+    image: anytools-web:local
+    restart: unless-stopped
+    environment:
+      SITE_URL: http://localhost:${PROXY_PORT:-8080}
+      API_INTERNAL_URL: http://api:4000
+      TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+    depends_on:
+      api: { condition: service_healthy }
+
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "${PROXY_PORT:-8080}:80"
+    volumes:
+      - ./infra/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+    depends_on:
+      web: { condition: service_healthy }
+      api: { condition: service_healthy }
+
+volumes:
+  pgdata:
+  redisdata:
+  storage:
+  caddydata:
