@@ -20,6 +20,9 @@
       "outputs": []
     },
     "test": {
+      // Vitest's globalSetup ignores the `@anytools/source` condition, so the API test setup
+      // (migrations + seed) needs the workspace packages built.
+      "dependsOn": ["^build"],
       "outputs": []
     }
   }
